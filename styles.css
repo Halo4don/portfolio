@@ -1,0 +1,344 @@
+/* ===== Base styles (mostly done) ===== */
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #222;
+    background: #fff;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container {
+    width: min(1000px, 92%);
+    margin: 0 auto;
+}
+/* ===== Header ===== */
+.site-header {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+.header-inner {
+/* TODO A (Flexbox):
+Make the brand appear on the left and the navigation on the
+right.
+Requirements:
+- Use flexbox
+- Center items vertically
+- Put space between left and right
+*/
+    display: flex;                   
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+.brand {
+    font-size: 28px;
+    font-weight: 700;
+}
+.brand .dot {
+/* TODO B (Color):
+Make the dot a light blue accent color (choose a readable
+blue).
+*/  
+    color: #4da6ff; 
+}
+.site-nav a {
+    margin-left: 18px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #444;
+}
+/* ===== Hero ===== */
+.hero {
+/* TODO C (Background image hero):
+Turn this into a hero banner with a background image.
+Requirements:
+- Use a background image URL (use the one below)
+- Make it cover the area and center it
+- Add a light overlay so text is readable (hint: use a
+linear-gradient + image)
+- Set a minimum height (e.g., 360px)
+*/
+/* My image:
+https://images.unsplash.com/photo-1469474968028-56623f02e42e?
+auto=format&fit=crop&w=1600&q=60
+*/
+    background:                      
+        linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
+        url("images/sunset.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+}
+.hero-content {
+/* TODO D (Center content):
+Center the hero text horizontally.
+Add vertical padding so it doesn't feel cramped.
+*/
+    text-align: center;             
+    padding: 90px 0;
+}
+.hero h1 {
+/* TODO E (Typography):
+Make the headline large and uppercase.
+(e.g., font-size around 4224px; color #555)
+*/
+    margin: 0;
+    font-size: 42px;                 
+    text-transform: uppercase;
+    color: #000000;
+}
+/* ===== Buttons ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.btn-dark {
+/* TODO G (Button styling):
+Make this a dark filled button with white text.
+(e.g., background #333; color #fff)
+
+*/
+    background: #333;                
+    color: #fff;
+}
+.btn-outline {
+/* TODO H (Button styling):
+Make this an outlined button with a blue border and matching
+text.
+(e.g., border: 2px solid ...; color: ...; background:
+transparent)
+*/
+    border: 2px solid #4da6ff;       
+    color: #4da6ff;
+    background: transparent;
+}
+/* ===== Features (3 columns) ===== */
+.features {
+    padding: 42px 0;
+}
+.features-grid {
+/* TODO I (Layout):
+Arrange the three feature blocks in a row (desktop).
+Requirements:
+- Use flexbox
+- Add a gap between items (e.g., 26px)
+*/
+    display: flex;                   
+    gap: 26px;
+}
+.feature {
+/* TODO J (Sizing / alignment):
+Make each feature take equal width and center its text.
+*/
+    flex: 1;                         
+    text-align: center;
+}
+.icon {
+    width: 56px;
+    height: 56px;
+    border: 2px solid #ddd;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 12px;
+    color: #666;
+    font-size: 22px;
+}
+/* ===== Featured content ===== */
+.featured {
+    padding: 42px 0 36px;
+    background: #f7f7f7;
+}
+.section-title {
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.section-lede {
+    text-align: center;
+    max-width: 680px;
+    margin: 10px auto 22px;
+    color: #666;
+    font-size: 13px;
+}
+.section-lede a {
+    color: #4da6ff;
+    text-decoration: underline;
+}
+.media {
+    max-width: 420px;           
+    margin: 0 auto;
+    height: auto;
+    background: none;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* ===== Secondary content (2 cards) ===== */
+.secondary {
+    padding: 34px 0 44px;
+}
+.secondary-grid {
+/* TODO K (Layout):
+Put the two cards next to each other on desktop.
+Requirements:
+- Use flexbox
+- Add a gap (e.g., 26px)
+*/
+    display: flex;                  
+    gap: 26px;
+}
+.card {
+/* TODO L (Card styling):
+Give each card a border and make it take equal width.
+(Hint: flex: 1; border: 1px solid #eee)
+*/
+    flex: 1;                         
+    border: 1px solid #eee;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card-text {
+    padding: 18px;
+}
+.card-text h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.card-text p {
+    margin: 0 0 14px;
+    color: #666;
+    font-size: 13px;
+}
+.card-image {
+/* TODO M (Image block):
+Make the card image behave like a background image:
+- cover
+- centered
+*/
+    min-height: 160px;
+    background-size: cover;          
+    background-position: center;
+}
+/* Optional images (already provided) */
+.img-a {
+background-image: url("images/work.jpg");
+}
+.img-b {
+background-image:
+url("images/valorant.png");
+}
+/* ===== CTA ===== */
+.cta {
+    background: #f7f7f7;
+    padding: 42px 0;
+}
+.cta-inner {
+/* TODO N (Center CTA):
+Center the CTA text and button.
+*/
+    text-align: center; 
+}
+/* ===== Footer ===== */
+.site-footer {
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    padding: 24px 0;
+}
+.footer-inner {
+/* TODO O (Footer layout):
+Arrange footer-left on the left and footer link columns on
+the right.
+Requirements:
+- Use flexbox
+- Add a gap (e.g., 24px)
+- Space items out (left/right)
+*/
+    display: flex;                  
+    gap: 24px;
+    justify-content: space-between;
+}
+.footer-left {
+    max-width: 360px;
+    color: #666;
+    font-size: 12px;
+}
+.footer-left a { color: #3a88a8; }
+.footer-cols {
+    display: flex;
+    gap: 28px;
+}
+.footer-col h4 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.footer-col a {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin: 6px 0;
+}
+
+/* changing the colors */
+
+.site-header { border-bottom: 3px solid #DC4D01; }
+.brand .dot { color: #DC4D01; }
+.site-nav a:hover { color: #DC4D01; text-decoration: none; }
+
+.hero {
+    background:
+        linear-gradient(rgba(92,62,46,0.45), rgba(92,62,46,0.45)),
+        url("images/sunset.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+}
+.hero h1,
+.hero p { color: #fff; }
+
+.btn-dark { background: #DC4D01; color: #fff; }
+.btn-dark:hover { background: #9C5027; text-decoration: none; }
+
+.btn-outline { border: 2px solid #2D8683; color: #2D8683; background: transparent; }
+.btn-outline:hover { background: #2D8683; color: #fff; text-decoration: none; }
+
+/* Features */
+.section-title { color: #5C3E2E; }
+.feature h3 { color: #5C3E2E; }
+.icon { border-color: #00DBD3; }
+
+.featured { background: #FDF1E8; }   /* very light tint of the orange */
+.section-lede a { color: #2D8683; text-decoration: underline; }
+
+/* Cards: colored top edge */
+.card { border-top: 4px solid #DC4D01; }
+.card:nth-child(2) { border-top-color: #2D8683; }
+.card-text h3 { color: #5C3E2E; }
+
+/* CTA: dark section with cyan button */
+.cta { background: #5C3E2E; }
+.cta h2 { color: #fff; }
+.cta .btn-outline { border-color: #00DBD3; color: #00DBD3; }
+.cta .btn-outline:hover { background: #00DBD3; color: #5C3E2E; }
+
+/* Footer */
+.site-footer { background: #5C3E2E; border-top: 4px solid #DC4D01; }
+.footer-left,
+.footer-col a { color: #E8D9D0; }
+.footer-col h4 { color: #00DBD3; }
